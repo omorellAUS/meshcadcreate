@@ -1,4 +1,4 @@
-# mac_packaging.spec - PyInstaller config for macOS .app bundle
+# mac_packaging.spec - For creating double-clickable MeshCADCreate.app
 
 block_cipher = None
 
@@ -11,13 +11,11 @@ a = Analysis(
         ('LICENSE', '.'),
         ('installer', 'installer'),
     ],
-    hiddenimports=['open3d', 'trimesh', 'PySide6', 'scipy', 'numpy'],
+    hiddenimports=['open3d', 'trimesh', 'PySide6', 'scipy', 'numpy', 'matplotlib'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],
-    win_no_prefer_redirects=False,
-    win_private_assemblies=False,
     cipher=block_cipher,
     noarchive=False,
 )
@@ -35,17 +33,18 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,      # Windowed for Mac
+    console=False,
     target_arch='x86_64',
 )
 
 app = BUNDLE(
     exe,
     name='MeshCADCreate.app',
-    icon='installer/meshcad_icon.icns',   # Add your icon here later
+    icon='installer/meshcad_icon.icns',
     bundle_identifier='com.perthresoles.meshcad',
     info_plist={
         'CFBundleShortVersionString': '1.0',
         'CFBundleVersion': '1.0',
+        'NSHighResolutionCapable': 'True',
     },
 )
