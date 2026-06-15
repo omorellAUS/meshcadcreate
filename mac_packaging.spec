@@ -1,5 +1,4 @@
-# mac_packaging.spec - Creates double-clickable MeshCADCreate.app
-# Place this file in the root of the repo
+# mac_packaging.spec - Improved for Open3D + PySide6
 
 block_cipher = None
 
@@ -14,7 +13,8 @@ a = Analysis(
     ],
     hiddenimports=[
         'open3d', 'trimesh', 'PySide6', 'scipy', 'numpy', 'matplotlib',
-        'scipy.interpolate', 'PySide6.QtWidgets', 'PySide6.QtCore'
+        'scipy.interpolate', 'open3d.visualization', 'PySide6.QtWidgets',
+        'PySide6.QtCore', 'PySide6.QtGui'
     ],
     hookspath=[],
     hooksconfig={},
@@ -37,7 +37,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,           # Windowed app (no terminal)
+    console=False,
     target_arch='x86_64',
 )
 
@@ -50,6 +50,5 @@ app = BUNDLE(
         'CFBundleShortVersionString': '1.0',
         'CFBundleVersion': '1.0',
         'NSHighResolutionCapable': 'True',
-        'CFBundleDisplayName': 'MeshCADCreate',
     },
 )
