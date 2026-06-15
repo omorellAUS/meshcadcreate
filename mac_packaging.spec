@@ -1,4 +1,5 @@
-# mac_packaging.spec - For creating double-clickable MeshCADCreate.app
+# mac_packaging.spec - Creates double-clickable MeshCADCreate.app
+# Place this file in the root of the repo
 
 block_cipher = None
 
@@ -11,7 +12,10 @@ a = Analysis(
         ('LICENSE', '.'),
         ('installer', 'installer'),
     ],
-    hiddenimports=['open3d', 'trimesh', 'PySide6', 'scipy', 'numpy', 'matplotlib'],
+    hiddenimports=[
+        'open3d', 'trimesh', 'PySide6', 'scipy', 'numpy', 'matplotlib',
+        'scipy.interpolate', 'PySide6.QtWidgets', 'PySide6.QtCore'
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -33,18 +37,19 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,
+    console=False,           # Windowed app (no terminal)
     target_arch='x86_64',
 )
 
 app = BUNDLE(
     exe,
     name='MeshCADCreate.app',
-    icon='installer/meshcad_icon.icns',
-    bundle_identifier='com.perthresoles.meshcad',
+    icon='installer/meshcad_icon.png',
+    bundle_identifier='com.perthresoles.meshcadcreate',
     info_plist={
         'CFBundleShortVersionString': '1.0',
         'CFBundleVersion': '1.0',
         'NSHighResolutionCapable': 'True',
+        'CFBundleDisplayName': 'MeshCADCreate',
     },
 )
