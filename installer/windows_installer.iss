@@ -1,4 +1,4 @@
-; MeshCADCreate Windows Installer - Wizard + Icon Support
+; MeshCADCreate Windows Installer with Icon + Wizard
 #define MyAppName "MeshCADCreate"
 #define MyAppVersion "1.0"
 #define MyAppPublisher "Perth Resoles"
@@ -9,24 +9,14 @@ AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName={autopf}\{#MyAppName}
-DefaultGroupName={#MyAppName}
-OutputDir=Output
-OutputBaseFilename=MeshCADCreate_Setup
-Compression=lzma
-SolidCompression=yes
 WizardStyle=modern
-WizardImageFile=installer\wizard_image.bmp   ; Add your image here later
-WizardSmallImageFile=installer\wizard_small.bmp
-SetupIconFile=installer\meshcad_icon.ico     ; <-- Icon reference
+SetupIconFile=meshcad_icon.ico
+WizardImageFile=wizard_image.bmp
 
 [Files]
-Source: "dist\meshcad.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "README.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "LICENSE"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\meshcad.exe"; DestDir: "{app}"
+Source: "README.md"; DestDir: "{app}"
+Source: "LICENSE"; DestDir: "{app}"
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-
-[Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "Launch MeshCADCreate"; Flags: postinstall nowait
