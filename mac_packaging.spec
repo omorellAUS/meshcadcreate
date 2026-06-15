@@ -1,4 +1,4 @@
-# mac_packaging.spec - Improved for Open3D + PySide6
+# mac_packaging.spec - FIXED for Open3D on macOS
 
 block_cipher = None
 
@@ -12,9 +12,9 @@ a = Analysis(
         ('installer', 'installer'),
     ],
     hiddenimports=[
-        'open3d', 'trimesh', 'PySide6', 'scipy', 'numpy', 'matplotlib',
-        'scipy.interpolate', 'open3d.visualization', 'PySide6.QtWidgets',
-        'PySide6.QtCore', 'PySide6.QtGui'
+        'open3d', 'open3d.visualization', 'open3d.geometry', 'open3d.io', 'open3d.utility',
+        'trimesh', 'PySide6', 'scipy', 'numpy', 'matplotlib', 'scipy.interpolate',
+        'PySide6.QtWidgets', 'PySide6.QtCore', 'PySide6.QtGui'
     ],
     hookspath=[],
     hooksconfig={},
