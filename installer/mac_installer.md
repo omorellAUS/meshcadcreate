@@ -1,9 +1,7 @@
-# macOS Installer Setup (Version 1)
+# MeshCADCreate macOS Installer (Double-Click Ready)
 
-To create a double-clickable .app installer on your Mac:
+1. The `mac_packaging.spec` file is in the root of the repo.
+2. This will produce a `MeshCADCreate.app` that you can double-click to run.
+3. Icon is already in `installer/meshcad_icon.png`
 
-1. Open the `meshcadcreate` folder.
-2. The `mac_packaging.spec` file is ready (below).
-3. When you are ready, we will guide you step-by-step without commands.
-
-Current files added for macOS support.
+Full .app bundle creation files are ready.
