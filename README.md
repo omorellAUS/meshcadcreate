@@ -4,7 +4,7 @@
 
 A blunt, engineering-grade reverse engineering pipeline that converts noisy .STL / .OBJ / .PLY scans (up to 300k faces) into high-quality quad-dominant remeshes and **editable parametric B-rep / prismatic solids**.
 
-Designed specifically for real workflows: Revopoint foot/shoe last scanning (Perth Resoles), mechanical parts (BHP pulleys, gearboxes, turbines), and hybrid organic/prismatic geometry.
+Designed specifically for real workflows: Revopoint foot/shoe last scanning (Perth Resoles), mechanical parts (Mining, machinery, turbines, compressors parts and componnents), and hybrid organic/prismatic geometry.
 
 ## Core Features (Building Now)
 
