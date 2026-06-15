@@ -1,4 +1,4 @@
-# mac_packaging.spec - FIXED for Open3D on macOS
+# mac_packaging.spec - Improved for Open3D bundling on macOS
 
 block_cipher = None
 
