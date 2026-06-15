@@ -1,4 +1,4 @@
-# mac_packaging.spec - Improved for Open3D bundling on macOS
+# mac_packaging.spec - Fixed for macOS (no icon for now)
 
 block_cipher = None
 
@@ -44,7 +44,7 @@ exe = EXE(
 app = BUNDLE(
     exe,
     name='MeshCADCreate.app',
-    icon='installer/meshcad_icon.png',
+    # icon removed temporarily to avoid error
     bundle_identifier='com.perthresoles.meshcadcreate',
     info_plist={
         'CFBundleShortVersionString': '1.0',
