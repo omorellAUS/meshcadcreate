@@ -1,0 +1,20 @@
+[project]
+name = "meshcadcreate"
+version = "0.1.0"
+description = "Proprietary mesh-to-parametric CAD tool for Fusion 360 - Perth Resoles"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "open3d>=0.18.0",
+    "trimesh>=4.0.0",
+    "numpy>=1.26.0",
+    "scipy>=1.12.0",
+    "matplotlib>=3.8.0",
+    "PySide6>=6.5.0"
+]
+
+[project.scripts]
+meshcad = "meshcadcreate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
