@@ -12,8 +12,11 @@ Converts noisy Revopoint .STL/.OBJ/.PLY scans (up to 300k faces) into quad-domin
 - Deviation metrics everywhere
 - Fusion 360 export skeleton
 
-## Installation
-```bash
-pip install -e .
-# For pythonocc NURBS (recommended):
-# conda install -c conda-forge pythonocc-core
+## Installation & Usage
+See `docs/workflow.md`
+
+## Installers
+- Windows: Use `installer/windows_installer.iss` (Inno Setup)
+- macOS: Coming in v1.1
+
+Proprietary - Test-net only.
