@@ -1,4 +1,4 @@
-# mac_packaging.spec - Fixed for macOS (no icon for now)
+# mac_packaging.spec - Simplified for First Working .app (no Open3D GUI for now)
 
 block_cipher = None
 
@@ -12,14 +12,12 @@ a = Analysis(
         ('installer', 'installer'),
     ],
     hiddenimports=[
-        'open3d', 'open3d.visualization', 'open3d.geometry', 'open3d.io', 'open3d.utility',
-        'trimesh', 'PySide6', 'scipy', 'numpy', 'matplotlib', 'scipy.interpolate',
-        'PySide6.QtWidgets', 'PySide6.QtCore', 'PySide6.QtGui'
+        'numpy', 'scipy', 'trimesh', 'PySide6', 'matplotlib'
     ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=[],
+    excludes=['open3d'],   # Temporarily exclude Open3D to get a working .app
     cipher=block_cipher,
     noarchive=False,
 )
@@ -44,7 +42,7 @@ exe = EXE(
 app = BUNDLE(
     exe,
     name='MeshCADCreate.app',
-    # icon removed temporarily to avoid error
+    icon='installer/meshcad_icon.png',
     bundle_identifier='com.perthresoles.meshcadcreate',
     info_plist={
         'CFBundleShortVersionString': '1.0',
